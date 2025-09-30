@@ -56,11 +56,11 @@ main {
 
     /* the voices are getting louder */
 
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1000px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
