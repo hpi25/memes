@@ -3,5 +3,6 @@
 .direnv
 .envrc
 
-# build output
-/vendor/
+# data
+uploads/
+!uploads/.gitkeep

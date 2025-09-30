@@ -1,3 +1,10 @@
-<?php declare(strict_types=1);
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Diogenes</title>
+    <meta charset="utf-8">
+</head>
+<body>
 
-require_once __DIR__ . '/../vendor/autoload.php';
+</body>
+</html>
