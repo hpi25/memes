@@ -1,0 +1,7 @@
+# tooling
+.idea
+.direnv
+.envrc
+
+# build output
+/vendor/
