@@ -3,6 +3,8 @@ services:
     build: .
     container_name: memes
     restart: unless-stopped
+    volumes:
+      - ./memes:/app/uploads
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.memes.rule=Host(`memes.hpi.church`)"
