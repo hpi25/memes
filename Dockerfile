@@ -1,0 +1,4 @@
+FROM dunglas/frankenphp
+
+COPY Caddyfile /etc/frankenphp/Caddyfile
+COPY src/ /app

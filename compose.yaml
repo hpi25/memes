@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: memes
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.memes.rule=Host(`memes.hpi.church`)"
+      - "traefik.http.routers.memes.entrypoints=websecure"
+      - "traefik.http.routers.memes.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.memes.service=memes"
+      - "traefik.http.services.memes.loadbalancer.server.port=80"

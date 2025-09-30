@@ -1,0 +1,9 @@
+{
+    frankenphp
+}
+
+:80 {
+    root /app
+    php_server
+    try_files {path} {path}.php
+}

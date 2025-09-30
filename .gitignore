@@ -2,7 +2,8 @@
 .idea
 .direnv
 .envrc
+.DS_Store
 
 # data
-uploads/
-!uploads/.gitkeep
+src/uploads/*
+!src/uploads/.gitkeep
