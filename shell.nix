@@ -2,9 +2,18 @@
   pkgs ? import <nixpkgs> { },
   ...
 }:
+let
+  extensions =
+    { enabled, all }:
+    enabled
+    ++ [
+      all.uv
+      all.gmp
+    ];
+in
 pkgs.mkShell {
   packages = with pkgs; [
-    php83
-    php83Packages.composer
+    (php84.buildEnv { inherit extensions; })
+    php84Packages.composer
   ];
 }

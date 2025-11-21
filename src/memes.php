@@ -50,11 +50,9 @@ function get_memes(): array
     ]);
 
     var_dump($messages);
-    // $client->channels->inviteToChannel();
 
-
-    return [
+    return [[
         "url" => "",
         "user" => ""
-    ];
+    ]];
 }

@@ -1,6 +1,8 @@
 services:
   app:
-    build: .
+    build:
+      context: .github/container
+      dockerfile: Containerfile
     container_name: memes
     restart: unless-stopped
     volumes:
