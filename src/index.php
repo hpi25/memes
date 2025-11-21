@@ -16,7 +16,6 @@ function Meme(array $meme): string
         </div>
     ";
 }
-
 ?>
 
 
@@ -40,7 +39,7 @@ function Meme(array $meme): string
 </header>
 
 <main>
-    <?php echo implode("\n", array_map(fn($meme) => Meme($meme), $memes)) ?>
+    <?php echo implode("\n", array_map(fn($meme) => Meme($meme), $memes)); ?>
 </main>
 
 <img id="banner" src="header.jpg" alt="graphic design is my passion">

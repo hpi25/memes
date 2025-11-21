@@ -1,11 +1,17 @@
 /* no vibecoded stylesheets, we die like real men */
+/* Nullum_Idea: OK, lets die together!*/
 :root {
     color: white;
     font-family: monospace;
     text-align: center;
 }
 
-body, html, main, header, footer, form {
+body,
+html,
+main,
+header,
+footer,
+form {
     width: 100%;
     max-width: 100%;
 
@@ -33,10 +39,14 @@ header {
 
     margin: 2rem 0;
 
-    h1 { font-size: 4rem; }
+    h1 {
+        font-size: 4rem;
+    }
 }
 
-#banner { height: 15rem; }
+#banner {
+    height: 15rem;
+}
 
 /*
 want padding/margin/.. on the sides? well fuck you. PR a fix.
@@ -98,8 +108,16 @@ form {
 /* graphic design is my passion */
 a {
     color: rgb(255, 117, 0);
-    &:link { color: rgb(255, 117, 0); }
-    &:visited { color: rgb(255, 117, 0); }
-    &:focus { color: rgb(255, 117, 0); }
-    &:active { color: rgb(255, 117, 0); }
+    &:link {
+        color: rgb(255, 117, 0);
+    }
+    &:visited {
+        color: rgb(255, 117, 0);
+    }
+    &:focus {
+        color: rgb(255, 117, 0);
+    }
+    &:active {
+        color: rgb(255, 117, 0);
+    }
 }

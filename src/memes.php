@@ -14,21 +14,20 @@ const CHANNEL_ID = -1789956480;
  */
 function make_client(): API
 {
-    (new Dotenv)->load(__DIR__ . "/../.env");
+    new Dotenv()->load(__DIR__ . "/../.env");
 
     $apiId = $_ENV["API_ID"];
     $apiHash = $_ENV["API_HASH"];
 
-    if (!$apiId || !$apiHash)
+    if (!$apiId || !$apiHash) {
         die("Env vars unset");
+    }
 
-    $settings = (new Settings)
+    $settings = new Settings()
         ->setAppInfo(
-            (new AppInfo)
-                ->setApiId(intval($apiId))
-                ->setApiHash($apiHash)
+            new AppInfo()->setApiId(intval($apiId))->setApiHash($apiHash),
         )
-        ->setPeer((new Settings\Peer)->setFullFetch(true));
+        ->setPeer(new Settings\Peer()->setFullFetch(true));
 
     $client = new API("session.madeline", $settings);
     $client->start();
@@ -52,9 +51,8 @@ function get_memes(): array
     var_dump($messages);
     // $client->channels->inviteToChannel();
 
-
     return [
         "url" => "",
-        "user" => ""
+        "user" => "",
     ];
 }
