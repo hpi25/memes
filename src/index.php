@@ -1,23 +1,17 @@
-<?php
-$files = array_diff(scandir(__DIR__ . '/uploads'), ['.', '..', '.gitkeep', ".DS_Store"]);
+<?php declare(strict_types=1);
+include "memes.php";
+
+$memes = get_memes();
 
 // look ma no react javascript
-function Meme(string $file): string
+function Meme(array $meme): string
 {
-    // const fuck_that = useState(await fetch('/api/v0/users/unknown/uploads/all'));
-
-    // "i want XSS"
-    // "we have XSS at home"
-    // XSS at home:
-    $file = htmlspecialchars($file);
-
-    // files should be named <something>.<username>.<ext>
-    $hiroshima = explode('.', $file);
-    $user = htmlspecialchars($hiroshima[count($hiroshima) - 2]);
+    $url = $meme["url"];
+    $user = $meme["user"];
 
     return "
         <div class='meme'>
-            <img src='/uploads/$file' loading='lazy' alt='A meme'>
+            <img src=$url' loading='lazy' alt='A meme'>
             <span>$user</span>
         </div>
     ";
@@ -37,7 +31,7 @@ function Meme(string $file): string
 <header>
     <h1>Memes!</h1>
 
-    <p>Lade deine Memes auf <a href="/upload">/upload</a> hoch.</p>
+    <p>Lade deine Memes in der Telegram-Gruppe hoch.</p>
 
     <noscript>
         Hallo freundliche*r NoScript-Benutzer*in! <br>
@@ -46,14 +40,7 @@ function Meme(string $file): string
 </header>
 
 <main>
-    <?php
-    if (count($files) < 1) {
-        echo "Keine Memes da, D:";
-        return;
-    }
-
-    echo implode("\n", array_map(fn($file) => Meme($file), $files))
-    ?>
+    <?php echo implode("\n", array_map(fn($meme) => Meme($meme), $memes)) ?>
 </main>
 
 <img id="banner" src="header.jpg" alt="graphic design is my passion">

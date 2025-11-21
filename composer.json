@@ -1,0 +1,8 @@
+{
+    "name": "hpi25/memes",
+    "type": "project",
+    "require": {
+        "danog/madelineproto": "^8.6",
+        "symfony/dotenv": "^7.3"
+    }
+}
