@@ -15,12 +15,18 @@ const CHANNEL_ID = -1789956480;
 function make_client(): API
 {
     (new Dotenv)->load(__DIR__ . "/../.env");
-    
+
+    $apiId = $_ENV["API_ID"];
+    $apiHash = $_ENV["API_HASH"];
+
+    if (!$apiId || !$apiHash)
+        die("Env vars unset");
+
     $settings = (new Settings)
         ->setAppInfo(
             (new AppInfo)
-                ->setApiId($_ENV["API_ID"])
-                ->setApiHash($_ENV["API_HASH"])
+                ->setApiId(intval($apiId))
+                ->setApiHash($apiHash)
         )
         ->setPeer((new Settings\Peer)->setFullFetch(true));
 
@@ -35,7 +41,6 @@ function make_client(): API
  */
 function get_memes(): array
 {
-
     $client = make_client();
 
     $messages = $client->messages->getHistory([
@@ -45,7 +50,7 @@ function get_memes(): array
     ]);
 
     var_dump($messages);
-    $client->channels->inviteToChannel()
+    // $client->channels->inviteToChannel();
 
 
     return [

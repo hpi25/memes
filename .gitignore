@@ -3,6 +3,7 @@
 .direnv
 .envrc
 .DS_Store
+memes.iml
 
 # data
 *.log
