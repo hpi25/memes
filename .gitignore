@@ -4,11 +4,14 @@
 .envrc
 .DS_Store
 memes.iml
+__pycache__
 
 # data
 *.log
 *.madeline
 *.env
 !.env.example
+*.db
 
 /vendor/
+.venv
